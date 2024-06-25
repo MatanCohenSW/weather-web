@@ -101,3 +101,11 @@ function calculateIntermediateColor(startColor, endColor, currentStep, totalStep
     }
     return result;
 }
+
+document.getElementById('locationInput').addEventListener('focus', function() {
+    this.placeholder = '';
+});
+
+document.getElementById('locationInput').addEventListener('blur', function() {
+    this.placeholder = 'Location'; // Optionally, add this line to restore the placeholder when the input loses focus
+});

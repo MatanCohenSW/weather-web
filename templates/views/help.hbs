@@ -12,7 +12,42 @@
 <body>
     <div class="main-content">
         {{>header}}
-        <p>{{helpText}}</p>
+        <div class="container">
+            <div class="section">
+                <h2>Introduction</h2>
+                <p>Welcome to our Weather Web App! This application provides real-time weather information for locations around the world.</p>
+            </div>
+            <div class="section">
+                <h2>How to Use the Application</h2>
+                <h5>Searching for Weather Information</h5>
+                <p>Enter the name of a city or location in the search bar and press the search icon to retrieve weather information.</p>
+                <br>
+                <h5>Understanding Weather Data</h5>
+                <p><strong style="font-size: 20px;">Temperature:</strong> Displayed in degrees Celsius (°C).</p>
+                <p><strong style="font-size: 20px;">Humidity:</strong> Shows the percentage of humidity in the air. Higher values indicate more moisture.</p>
+                <p><strong style="font-size: 20px;">Wind Speed:</strong> Displayed in km/h. Indicates how fast the wind is blowing.</p>
+                <p><strong style="font-size: 20px;">UV Index:</strong> Measures the strength of sunburn-producing ultraviolet radiation. A higher index means greater potential for skin damage.</p>
+            </div>
+            <div class="section">
+                <h2>Features</h2>
+                <ul>
+                    <li>Current weather conditions</li>
+                    <li>Detailed weather parameters including humidity, wind speed, and UV index</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Troubleshooting</h2>
+                <h5>No Weather Data Available</h5>
+                <p>If no weather data is available, please check your internet connection and ensure the location is spelled correctly.</p>
+                <br>
+                <h5>Incorrect Data Display</h5>
+                <p>If you notice incorrect data, please contact to report the issue. We appreciate your feedback.</p>
+            </div>
+            <div class="section">
+                <h2>Contact and Feedback</h2>
+                <p>If you have any questions or feedback, please contact us at <a href="mailto:MatanCohenSW@gmail.com">MatanCohenSW@gmail.com</a>.</p>
+            </div>
+        </div>
     </div>
 
     {{>footer}}

@@ -27,15 +27,14 @@ app.get('',(req,res) =>{
 
 app.get('/about',(req,res) =>{
     res.render('about',{
-        title: 'About',
+        title: '',
         name: 'Matan Cohen'
     })
 })
 
 app.get('/help',(req,res) =>{
     res.render('help',{
-        title: 'Help',
-        helpText: 'Here to write help',
+        title: '',
         name: 'Matan Cohen'
     })
 })
