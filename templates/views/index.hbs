@@ -8,20 +8,52 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body>
+{{>header}}
+
+<body id="body">
     <div class="main-content">
-        {{>header}}
-        the page to get the weather
 
         <form action="">
             <input type="" placeholder="Location">
-            <button>Search</button>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>  
+            </button>
         </form>
+
+        <div id="weather-content">
+            <div style="flex: 1;">
+                <img id="weather-image" src="/img/sunny-weather.jpeg" alt="">
+
+            </div>
+
+            <div id="weather-details">
+                <span id="weather-temp"></span><br>
+                <span id="weather-address"></span>
+
+                <span style="text-align: left; margin-left: 10%; display: flex;"> 
+                    <img id="humidity-image" src="/img/humidity.jpeg" alt="">
+                    <span id="weather-humidity-header">Humidity</span>
+                    <img id="wind-image" src="/img/wind.jpeg" alt="">
+                    <span id="weather-wind-header">Wind Speed</span>
+                    <img id="uv-index-image" src="/img/uv-index.jpeg" alt="">
+                    <span id="weather-uv-index-header">UV-Index</span>
+                </span>
+
+                <div style="margin-top: -1%; display: flex;">
+                    <span id="weather-humidity-details"></span>
+                    <span id="weather-wind-details"></span>
+                    <span id="weather-uv-index-details"></span>
+                </div>
+                
+            </div>
+        </div>
+
+        {{>footer}}
         
-        <p id="response-message"></p>
     </div>
 
-    {{>footer}}
     <script src="/js/app.js"></script>
 </body>
 
