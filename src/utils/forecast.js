@@ -1,9 +1,10 @@
 const request = require('request');
+const { weatherstack } = require('../../config/config');
 
 
 const getWeatherByCity = (city,callback) =>{
 
-    const url = "http://api.weatherstack.com/current?access_key=9e48245b8021a72c154b9ca8b5a26ee6&query=" + city;
+    const url = "http://api.weatherstack.com/current?access_key=" + weatherstack.accessKey + "&query=" + city;
 
     request({url: url,json: true},(error, response) => {
         if(error)

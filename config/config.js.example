@@ -3,5 +3,8 @@ module.exports = {
         password: 'ENTER PASSWORD',
         host: 'ENTER HOST',
         port: ENTER PORT
+    },
+    weatherstack:{
+        accessKey:'ENTER ACCESS KEY'
     }
 };
