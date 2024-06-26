@@ -1,5 +1,7 @@
-Weather Website
-Description
+![image](https://github.com/MatanCohenSW/weather-web/assets/173396760/5c2cb138-c115-491e-8069-bc0eeb1a5792)
+
+Weather Website Description
+
 This Weather Website is a dynamic, user-friendly platform that provides real-time weather information for locations around the world.
 
 Features
@@ -46,3 +48,4 @@ Contact
 For any questions or feedback, feel free to reach out:
 
 Email: MatanCohenSW@gmail.com
+
