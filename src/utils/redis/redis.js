@@ -1,12 +1,12 @@
+const { redis } = require('../../../config/config');
 const { createClient } = require('redis');
-
 
 const mexResponse = 240;
 const client = createClient({
-    password: 'eIFQ2QDQjKRmXdcjtYufcAPIiIVZJDny',
+    password: redis.password,
     socket: {
-        host: 'redis-11653.c256.us-east-1-2.ec2.redns.redis-cloud.com',
-        port: 11653
+        host: redis.host,
+        port: redis.port
     }
 });
 

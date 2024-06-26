@@ -1,0 +1,7 @@
+module.exports = {
+    redis: {
+        password: 'ENTER PASSWORD',
+        host: 'ENTER HOST',
+        port: ENTER PORT
+    }
+};
