@@ -4,7 +4,7 @@ body{
     display: flex;
     height: 100%;
     flex-direction: column;
-    min-height: 97vh;
+    min-height: 97.7vh;
     background: linear-gradient(125deg, #4A90F3, #0157FF);
     transition: background-color 0.5s ease-in-out;
     text-align: center;

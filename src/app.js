@@ -1,8 +1,10 @@
 const path = require('path')
+const { createClient } = require('redis');
 const express = require('express')
 const hbs = require('hbs')
 const app = express()
 const forecast = require('./utils/forecast');
+const redis = require('./utils/redis/redis');
 const port = process.env.PORT || 3000
 
 // Paths for express config
@@ -53,13 +55,30 @@ app.get('/weather',(req,res) => {
                 error: error
             })
         else{
-            debugger
             res.send({
                 weatherDetails: data
             })
         }
             
     })
+
+
+})
+
+app.get('/updateNumRequest',async (req,res) => {
+    redis.setRequestNum((error,numRequest)=>{
+        if(error){
+            res.send({
+                error: error
+            })
+        }
+        else{
+            res.send({
+                numRequest: numRequest
+            })
+        }
+    })
+
 
 })
 

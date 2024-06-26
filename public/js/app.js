@@ -6,6 +6,7 @@ const weatherHumidity = document.getElementById('weather-humidity-details')
 const weatherWind = document.getElementById('weather-wind-details')
 const uvIndex = document.getElementById('weather-uv-index-details')
 const weatherImage = document.getElementById('weather-image')
+const errorMessage = document.getElementById('error-message')
 
 weatherTemp.textContent = "-" + "° C"
 
@@ -13,60 +14,69 @@ var dayBackground = true;
 
 weatherForm.addEventListener('submit',(e) =>{
     e.preventDefault()
-
     const loocation = search.value
 
-    fetch('/weather?address=' + loocation).then((response) => {
-        response.json().then((data) => {
+    fetch('/updateNumRequest').then((response)=>{
+        response.json().then((data)=>{
             if(data.error)
-                responseMessage.textContent = data.error
-            else{
-                weatherTemp.textContent = data.weatherDetails.temp + "° C"
-                weatherAddress.textContent = data.weatherDetails.address 
-                weatherHumidity.textContent = data.weatherDetails.humidity + "%"
-                weatherWind.textContent = data.weatherDetails.windSpeed + " Km/h"
-                uvIndex.textContent = data.weatherDetails.uvIndex
-                debugger
-                const weatherDesc = data.weatherDetails.weatherDesc[0].toLowerCase()
+                errorMessage.textContent = data.error
+            else {
+                errorMessage.textContent = ""
 
-                if(data.weatherDetails.isDay){
-                    if(!dayBackground)
-                        changeBackgroundColor([56, 65, 83],[8, 25, 51],[74,152,243],[1,87,255]);
-
-                    if(weatherDesc.includes("sunny")){
-                        weatherImage.src = "/img/sunny-weather.jpeg"
-                    }
-                    else if(weatherDesc.includes("cloudy")){
-                        weatherImage.src = "/img/cloudy-weather.jpeg"
-                    }
-                    else{
-                        weatherImage.src = "/img/rainy-weather.jpeg"
-                    }
-
-                    dayBackground = true
-                }
-                else if(!data.weatherDetails.isDay){
-                    if(dayBackground)
-                        changeBackgroundColor([74,152,243],[1,87,255],[56, 65, 83],[8, 25, 51]);
-
-                    if(weatherDesc.includes("cloudy")){
-                        weatherImage.src = "/img/cloudy-weather.jpeg"
-                    }
-                    else if(weatherDesc.includes("clear")){
-                        weatherImage.src = "/img/clear-night-weather.jpeg"
-                    }
-                    else{
-                        weatherImage.src = "/img/rainy-weather.jpeg"
-                    }
-
-                    dayBackground = false
-
-                }
+                fetch('/weather?address=' + loocation).then((response) => {
+                    response.json().then((data) => {
+                        if(data.error)
+                            errorMessage.textContent = data.error
+                        else{
+                            errorMessage.textContent = ""
+                            weatherTemp.textContent = data.weatherDetails.temp + "° C"
+                            weatherAddress.textContent = data.weatherDetails.address 
+                            weatherHumidity.textContent = data.weatherDetails.humidity + "%"
+                            weatherWind.textContent = data.weatherDetails.windSpeed + " Km/h"
+                            uvIndex.textContent = data.weatherDetails.uvIndex
+                            const weatherDesc = data.weatherDetails.weatherDesc[0].toLowerCase()
+            
+                            if(data.weatherDetails.isDay){
+                                if(!dayBackground)
+                                    changeBackgroundColor([56, 65, 83],[8, 25, 51],[74,152,243],[1,87,255]);
+            
+                                if(weatherDesc.includes("sunny")){
+                                    weatherImage.src = "/img/sunny-weather.jpeg"
+                                }
+                                else if(weatherDesc.includes("cloudy")){
+                                    weatherImage.src = "/img/cloudy-weather.jpeg"
+                                }
+                                else{
+                                    weatherImage.src = "/img/rainy-weather.jpeg"
+                                }
+            
+                                dayBackground = true
+                            }
+                            else if(!data.weatherDetails.isDay){
+                                if(dayBackground)
+                                    changeBackgroundColor([74,152,243],[1,87,255],[56, 65, 83],[8, 25, 51]);
+            
+                                if(weatherDesc.includes("cloudy")){
+                                    weatherImage.src = "/img/cloudy-weather.jpeg"
+                                }
+                                else if(weatherDesc.includes("clear")){
+                                    weatherImage.src = "/img/clear-night-weather.jpeg"
+                                }
+                                else{
+                                    weatherImage.src = "/img/rainy-weather.jpeg"
+                                }
+            
+                                dayBackground = false
+            
+                            }
+                        }
+            
+                    })
+            
+                })
             }
-
         })
-
-    })
+    }) 
 
 })
 
