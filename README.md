@@ -1,8 +1,6 @@
 Explore the website firsthand at https://weather-web-e5dp.onrender.com to experience its dynamic and user-friendly platform offering real-time weather information for global locations.
+
 Weather Website Description
-
-![image](https://github.com/MatanCohenSW/weather-web/assets/173396760/5c2cb138-c115-491e-8069-bc0eeb1a5792)
-
 This Weather Website is a dynamic, user-friendly platform that provides real-time weather information for locations around the world.
 
 Features
