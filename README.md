@@ -7,7 +7,7 @@ Features
 Real-Time Weather Data: Access up-to-date weather conditions for any city or location worldwide.
 Comprehensive Weather Parameters: Check essential weather metrics including temperature, humidity, wind speed, and UV index.
 
-Technologies Used
+Technologies Used \n
 Frontend: HTML, CSS, JavaScript
 Backend: Node.js, Express.js
 APIs: Weather Stack API
