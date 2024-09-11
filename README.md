@@ -11,8 +11,8 @@ Technologies Used
 Frontend: HTML, CSS, JavaScript                                                                                      
 Backend: Node.js, Express.js                                                                          
 APIs: Weather Stack API                                                                          
-Deployment: Render
-About the Creator
+Deployment: Render                                                                              
+About the Creator                                                              
 Matan Cohen is a skilled full-stack developer with several years of experience in the industry. Passionate about technology and innovation, Matan enjoys working on personal projects like this weather website to continually expand his expertise and contribute valuable tools to the community.
 
 Getting Started
